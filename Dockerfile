@@ -18,7 +18,8 @@ apt-get install -y avg2013flx:i386 \
 && rm -rf /var/lib/apt/lists/* /tmp/fiodor.gpg
 
 # Install AVG
-RUN avgcfgctl -w Default.setup.daemonize=false
+RUN avgcfgctl -w Default.setup.daemonize=false && \
+avgcfgctl -w Default.tcpd.avg.address=0.0.0.0
 
 ADD docker-entrypoint.sh /
 
