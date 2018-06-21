@@ -22,4 +22,6 @@ RUN avgcfgctl -w Default.setup.daemonize=false
 
 ADD docker-entrypoint.sh /
 
+VOLUME [ "/opt/avg/av/var/data" ]
+
 ENTRYPOINT ["/usr/local/bin/tini", "--", "/docker-entrypoint.sh"]
